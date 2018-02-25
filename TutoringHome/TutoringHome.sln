@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27130.2003
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TutoringHome.Web", "TutoringHome.Web\TutoringHome.Web.csproj", "{2C56F289-2E07-41A4-8459-1622C9FB3C0E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TutoringHome.Service", "TutoringHome.Service\TutoringHome.Service.csproj", "{751DD920-D46F-462E-9F0D-5943F38FD2DB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{2C56F289-2E07-41A4-8459-1622C9FB3C0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2C56F289-2E07-41A4-8459-1622C9FB3C0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2C56F289-2E07-41A4-8459-1622C9FB3C0E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{751DD920-D46F-462E-9F0D-5943F38FD2DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{751DD920-D46F-462E-9F0D-5943F38FD2DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{751DD920-D46F-462E-9F0D-5943F38FD2DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{751DD920-D46F-462E-9F0D-5943F38FD2DB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
