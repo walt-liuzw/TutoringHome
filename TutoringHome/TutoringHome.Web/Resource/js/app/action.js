@@ -4,7 +4,10 @@ define(["jquery", "app/render", "app/model", "app/common", "jquery-ui", "validat
         {
             btnSubmit: function ()
             {
-                alert("1111")
+                if ($('.form-horizontal').valid())
+                {
+                    $('.form-horizontal').attr("action", "http://tutoringhome.163vps.cn/TutorCandidates/Save").submit();
+                }
             }
         }
     return action;

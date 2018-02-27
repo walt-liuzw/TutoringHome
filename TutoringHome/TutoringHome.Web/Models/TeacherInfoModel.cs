@@ -28,7 +28,7 @@ namespace TutoringHome.Web.Models
         public string Major { get; set; }
         [DataMember]
         [Required(ErrorMessage = "请输入擅长年级与科目")]
-        public SubjectEnum Subject { get; set; }
+        public string Subject { get; set; }
         [DataMember]
         [Required(ErrorMessage = "请输入教育经验")]
         public string Experience { get; set; }

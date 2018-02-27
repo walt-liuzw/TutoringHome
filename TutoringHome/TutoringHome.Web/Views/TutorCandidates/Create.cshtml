@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>添加信息</title>
-    <script data-main="@Url.Content("~/Resource/js/home")" src="@Url.Content("~/Resource/js/lib/require.js")"></script>
+    <script data-main="@Url.Content("~/Resource/js/home.js?ts="+ ViewBag.TimeStamp)" src="@Url.Content("~/Resource/js/lib/require.js")"></script>
     <link href="@Url.Content("~/Resource/css/bootstrap.min.css")" rel="stylesheet">
     <link href="@Url.Content("~/Resource/css/bootstrap-theme.min.css")" rel="stylesheet">
     <link href="@Url.Content("~/Resource/css/theme.css")" rel="stylesheet">
@@ -40,7 +40,7 @@
                                 <label for="Age" class="col-sm-2 control-label">年龄</label>
                                 <div class="col-sm-5">
                                     @Html.ValidationMessageFor(m => m.Age, null, new { @class = "text-danger" })
-                                    @Html.TextBoxFor(m => m.Age, new { @class = "form-control",@style = "width:35px"})
+                                    @Html.TextBoxFor(m => m.Age, new { @class = "form-control",@style = "width:70px"})
                                 </div>
                             </div>
                             <div class="form-group">

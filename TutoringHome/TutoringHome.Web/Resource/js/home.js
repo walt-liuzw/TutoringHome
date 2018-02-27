@@ -16,11 +16,9 @@
         "validate-ubo": ["jquery", "validate"]
     }
 })
-require(["app/action", "underscore", "backbone", "jquery", "jquery-ui", "bootstrap", "validate", "validate-ubo"], function (action, underscore, Backbone) {
+require(["http://tutoringhome.163vps.cn/Resource/js/app/action.js?ts=" + new Date().getTime(), "underscore", "backbone", "jquery", "jquery-ui", "bootstrap", "validate", "validate-ubo"], function (action, underscore, Backbone) {
     var AppView = Backbone.View.extend({
         el: $('body'),
-        initialize: function () {
-        },
         events: {
             'click #btnSubmit': action.btnSubmit
         }

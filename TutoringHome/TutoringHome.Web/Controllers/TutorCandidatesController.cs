@@ -13,14 +13,15 @@ namespace TutoringHome.Web.Controllers
         [HttpGet]
         public ActionResult Create()
         {
+            ViewBag.TimeStamp = Guid.NewGuid().ToString();
             ViewBag.SexList = EnumHelper.GetSelectList<SexEnum>();
             return View();
         }
         [HttpPost]
-        public ContentResult Save()
+        public ActionResult Save(TeacherInfoModel teacherInfo)
         {
             var result = new Result();
-            return Content("");
+            return Json(result);
         }
         public ActionResult Update()
         {
