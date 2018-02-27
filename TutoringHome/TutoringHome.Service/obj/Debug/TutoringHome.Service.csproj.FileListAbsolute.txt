@@ -1,0 +1,16 @@
+E:\TutoringHome\TutoringHome\TutoringHome.Service\bin\Debug\TutoringHome.Service.dll
+E:\TutoringHome\TutoringHome\TutoringHome.Service\bin\Debug\TutoringHome.Service.pdb
+E:\TutoringHome\TutoringHome\TutoringHome.Service\bin\Debug\Newtonsoft.Json.dll
+E:\TutoringHome\TutoringHome\TutoringHome.Service\bin\Debug\Senparc.WebSocket.dll
+E:\TutoringHome\TutoringHome\TutoringHome.Service\bin\Debug\Senparc.Weixin.dll
+E:\TutoringHome\TutoringHome\TutoringHome.Service\bin\Debug\Senparc.Weixin.MP.dll
+E:\TutoringHome\TutoringHome\TutoringHome.Service\bin\Debug\Senparc.Weixin.WxOpen.dll
+E:\TutoringHome\TutoringHome\TutoringHome.Service\bin\Debug\Newtonsoft.Json.xml
+E:\TutoringHome\TutoringHome\TutoringHome.Service\bin\Debug\Senparc.WebSocket.xml
+E:\TutoringHome\TutoringHome\TutoringHome.Service\bin\Debug\Senparc.Weixin.xml
+E:\TutoringHome\TutoringHome\TutoringHome.Service\bin\Debug\Senparc.Weixin.MP.xml
+E:\TutoringHome\TutoringHome\TutoringHome.Service\bin\Debug\Senparc.Weixin.WxOpen.xml
+E:\TutoringHome\TutoringHome\TutoringHome.Service\obj\Debug\TutoringHome.Service.csproj.CoreCompileInputs.cache
+E:\TutoringHome\TutoringHome\TutoringHome.Service\obj\Debug\TutoringHome.Service.dll
+E:\TutoringHome\TutoringHome\TutoringHome.Service\obj\Debug\TutoringHome.Service.pdb
+E:\TutoringHome\TutoringHome\TutoringHome.Service\obj\Debug\TutoringHome.Service.csprojResolveAssemblyReference.cache

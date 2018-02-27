@@ -155,40 +155,83 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\TutorCandidatesController.cs" />
     <Compile Include="Controllers\WeixinController.cs" />
+    <Compile Include="CommonEnum\CommonEnum.cs" />
+    <Compile Include="CommonEnum\EnumHelper.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Result.cs" />
+    <Compile Include="Models\TeacherInfoModel.cs" />
+    <Compile Include="MVCExtension\MvcExtension.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
-    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Content\Site.css" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="Scripts\jquery-1.10.2.js" />
-    <Content Include="Scripts\jquery-1.10.2.min.js" />
-    <None Include="Scripts\jquery.validate-vsdoc.js" />
-    <Content Include="Scripts\jquery.validate.js" />
-    <Content Include="Scripts\jquery.validate.min.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Scripts\modernizr-2.6.2.js" />
-    <Content Include="Scripts\respond.js" />
-    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Resource\css\bootstrap-theme.css" />
+    <Content Include="Resource\css\bootstrap-theme.min.css" />
+    <Content Include="Resource\css\bootstrap.css" />
+    <Content Include="Resource\css\bootstrap.min.css" />
+    <Content Include="Resource\css\jquery-ui\accordion.css" />
+    <Content Include="Resource\css\jquery-ui\all.css" />
+    <Content Include="Resource\css\jquery-ui\autocomplete.css" />
+    <Content Include="Resource\css\jquery-ui\base.css" />
+    <Content Include="Resource\css\jquery-ui\button.css" />
+    <Content Include="Resource\css\jquery-ui\core.css" />
+    <Content Include="Resource\css\jquery-ui\datepicker.css" />
+    <Content Include="Resource\css\jquery-ui\dialog.css" />
+    <Content Include="Resource\css\jquery-ui\draggable.css" />
+    <Content Include="Resource\css\jquery-ui\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Resource\css\jquery-ui\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Resource\css\jquery-ui\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Resource\css\jquery-ui\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Resource\css\jquery-ui\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Resource\css\jquery-ui\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Resource\css\jquery-ui\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Resource\css\jquery-ui\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Resource\css\jquery-ui\images\ui-icons_222222_256x240.png" />
+    <Content Include="Resource\css\jquery-ui\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Resource\css\jquery-ui\images\ui-icons_454545_256x240.png" />
+    <Content Include="Resource\css\jquery-ui\images\ui-icons_888888_256x240.png" />
+    <Content Include="Resource\css\jquery-ui\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Resource\css\jquery-ui\menu.css" />
+    <Content Include="Resource\css\jquery-ui\progressbar.css" />
+    <Content Include="Resource\css\jquery-ui\resizable.css" />
+    <Content Include="Resource\css\jquery-ui\selectable.css" />
+    <Content Include="Resource\css\jquery-ui\selectmenu.css" />
+    <Content Include="Resource\css\jquery-ui\slider.css" />
+    <Content Include="Resource\css\jquery-ui\sortable.css" />
+    <Content Include="Resource\css\jquery-ui\spinner.css" />
+    <Content Include="Resource\css\jquery-ui\tabs.css" />
+    <Content Include="Resource\css\jquery-ui\theme.css" />
+    <Content Include="Resource\css\jquery-ui\tooltip.css" />
+    <Content Include="Resource\css\theme.css" />
+    <Content Include="Resource\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Resource\js\app\action.js" />
+    <Content Include="Resource\js\app\common.js" />
+    <Content Include="Resource\js\app\model.js" />
+    <Content Include="Resource\js\app\render.js" />
+    <Content Include="Resource\js\home.js" />
+    <Content Include="Resource\js\lib\backbone.js" />
+    <Content Include="Resource\js\lib\bootstrap.js" />
+    <Content Include="Resource\js\lib\bootstrap.min.js" />
+    <Content Include="Resource\js\lib\jquery-ui.js" />
+    <Content Include="Resource\js\lib\jquery.js" />
+    <Content Include="Resource\js\lib\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Resource\js\lib\jquery.validate.min.js" />
+    <Content Include="Resource\js\lib\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Resource\js\lib\npm.js" />
+    <Content Include="Resource\js\lib\require.js" />
+    <Content Include="Resource\js\lib\underscore.js" />
     <Content Include="Web.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -201,31 +244,24 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Views\Web.config" />
-    <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Weixin\Index.cshtml" />
     <Content Include="Views\Error\Index.cshtml" />
+    <Content Include="Views\TutorCandidates\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Resource\css\bootstrap-theme.css.map" />
+    <Content Include="Resource\css\bootstrap.css.map" />
+    <Content Include="Resource\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Resource\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Resource\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Resource\fonts\glyphicons-halflings-regular.woff2" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TutoringHome.Service\TutoringHome.Service.csproj">
