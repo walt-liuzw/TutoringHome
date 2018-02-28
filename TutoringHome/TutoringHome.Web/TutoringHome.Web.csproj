@@ -157,8 +157,10 @@
   <ItemGroup>
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="CommonHelper\HttpClientHelper.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ParentController.cs" />
     <Compile Include="Controllers\TutorCandidatesController.cs" />
     <Compile Include="Controllers\WeixinController.cs" />
     <Compile Include="CommonEnum\CommonEnum.cs" />
@@ -166,8 +168,11 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Pager.cs" />
     <Compile Include="Models\Result.cs" />
+    <Compile Include="Models\SearchParams.cs" />
     <Compile Include="Models\TeacherInfoModel.cs" />
+    <Compile Include="Models\TestimonialModel.cs" />
     <Compile Include="MVCExtension\MvcExtension.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -262,6 +267,8 @@
     <Content Include="Resource\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Resource\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Resource\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Views\Parent\GetInfoList.cshtml" />
+    <Content Include="Views\Shared\PagerPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TutoringHome.Service\TutoringHome.Service.csproj">

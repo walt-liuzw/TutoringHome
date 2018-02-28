@@ -1,0 +1,67 @@
+﻿@using TutoringHome.Web.Models
+@model Pager
+@{
+    int preIndex = Model.PageIndex - 1;
+    int nextIndex = Model.PageIndex + 1;
+    int startIndex = Model.PageCnt <= 6 ? 0 : Model.PageIndex + 7 > Model.PageCnt ? Model.PageCnt - 6 : Model.PageIndex <= 3 ? 0 : Model.PageIndex - 2;
+    int pcount = Model.PageCnt < 6 ? Model.PageCnt : startIndex + 6;
+
+    string action = ViewData["actionName"] as string;
+    string controller = ViewData["controllerName"] as string;
+
+    RouteValueDictionary urlparams = ViewData["urlparams"] as RouteValueDictionary;
+    if (urlparams == null) { urlparams = new RouteValueDictionary(); }
+    urlparams.Add("pageindex", preIndex);
+}
+<nav>
+    <ul class="pagination">
+        @if (Model.PageIndex == 0)
+        {
+            <li class="disabled">
+                <a href="#" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+        }
+        else
+        {
+            <li>
+                <a href="@Url.Action(action, controller, urlparams)" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+        }
+        @for (int n = startIndex; n < pcount; n++)
+        {
+            urlparams["pageindex"] = n;
+            if (n == Model.PageIndex)
+            {
+                <li class="active"><a href="@Url.Action(action, controller, urlparams)">@(n + 1)</a></li>
+            }
+            else
+            {
+                <li><a href="@Url.Action(action, controller, urlparams)">@(n + 1)</a></li>
+            }
+        }
+
+        @if (Model.PageIndex == Model.PageCnt - 1)
+        {
+            <li class="disabled">
+                <a href="#" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+        }
+        else
+        {
+            urlparams["page"] = nextIndex;
+            urlparams["pageindex"] = nextIndex;
+
+            <li>
+                <a href="@Url.Action(action, controller, urlparams)" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+        }
+    </ul>
+</nav>

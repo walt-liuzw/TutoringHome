@@ -14,98 +14,90 @@
 </head>
 <body role="document">
     <div class="container-fluid theme-showcase" role="main">
-        <div class="row-fluid">
-            <div class="col-sm-12">
-                <div class="panel panel-default">
-                    <div class="panel-body">
-                        <form class="form-horizontal" name="repository-form" action="/TutorCandidates/Save" method="post" role="form">
-                            <div class="page-header" style="margin-top:0px;">
-                                <label style="text-align:center">填写个人信息</label>
-                            </div>
-                            <div class="form-group">
-                                <label for="Name" class="col-sm-2 control-label">姓名</label>
-                                <div class="col-sm-5">
-                                    @Html.ValidationMessageFor(m => m.Name, null, new { @class = "text-danger" })
-                                    @Html.TextBoxFor(m => m.Name, new { @class = "form-control", @placeholder = "eg. 张三" })
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="Sex" class="col-sm-2 control-label">性别</label>
-                                <div class="col-sm-5">
-                                    @Html.ValidationMessageFor(m => m.Sex, null, new { @class = "text-danger" })
-                                    @TutoringHome.Web.MVCExtension.MvcExtension.RadioButtonFor(Html, m => m.Sex, ViewBag.SexList as List<SelectListItem>)
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="Age" class="col-sm-2 control-label">年龄</label>
-                                <div class="col-sm-5">
-                                    @Html.ValidationMessageFor(m => m.Age, null, new { @class = "text-danger" })
-                                    @Html.TextBoxFor(m => m.Age, new { @class = "form-control",@style = "width:70px"})
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="Graduate" class="col-sm-2 control-label">就读/毕业院校</label>
-                                <div class="col-sm-5">
-                                    @Html.ValidationMessageFor(m => m.Graduate, null, new { @class = "text-danger" })
-                                    @Html.TextBoxFor(m => m.Graduate, new { @class = "form-control", @placeholder = "eg. 清华大学" })
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="Major" class="col-sm-2 control-label">学习专业</label>
-                                <div class="col-sm-5">
-                                    @Html.ValidationMessageFor(m => m.Major, null, new { @class = "text-danger" })
-                                    @Html.TextBoxFor(m => m.Major, new { @class = "form-control", @placeholder = "eg. 计算机专业" })
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="Subject" class="col-sm-2 control-label">擅长年级与科目</label>
-                                <div class="col-sm-5">
-                                    @Html.ValidationMessageFor(m => m.Subject, null, new { @class = "text-danger" })
-                                    @Html.TextAreaFor(m => m.Subject, new { @class = "form-control", @placeholder = "eg. 一年级语文，三年级数学" })
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="Experience" class="col-sm-2 control-label">教育经验</label>
-                                <div class="col-sm-5">
-                                    @Html.ValidationMessageFor(m => m.Experience, null, new { @class = "text-danger" })
-                                    @Html.TextAreaFor(m => m.Experience, new { @class = "form-control", @placeholder = "eg. 最近一段时间的经验示例" })
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="Evaluation" class="col-sm-2 control-label">自我评价</label>
-                                <div class="col-sm-5">
-                                    @Html.ValidationMessageFor(m => m.Evaluation, null, new { @class = "text-danger" })
-                                    @Html.TextAreaFor(m => m.Evaluation, new { @class = "form-control", @placeholder = "eg. 教授成果" })
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="Domicile" class="col-sm-2 control-label">现居住地</label>
-                                <div class="col-sm-5">
-                                    @Html.ValidationMessageFor(m => m.Domicile, null, new { @class = "text-danger" })
-                                    @Html.TextBoxFor(m => m.Domicile, new { @class = "form-control", @placeholder = "eg. 具体到街道门牌号" })
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="Mobile" class="col-sm-2 control-label">联系电话</label>
-                                <div class="col-sm-5">
-                                    @Html.ValidationMessageFor(m => m.Mobile, null, new { @class = "text-danger" })
-                                    @Html.TextBoxFor(m => m.Mobile, new { @class = "form-control", @placeholder = "eg.有效的联系电话" })
-                                </div>
-                            </div>
-
-                            <div class="btn-group col-sm-10 text-center">
-                                <span>
-                                    <button type="button" class="btn btn-primary" id="btnSubmit" style="margin-left:100px">保存</button>
-                                    <button type="button" class="btn btn-default" id="btnClose">关闭</button>
-                                </span>
-
-                            </div>
-                        </form>
+        <div class="panel-body">
+            <form class="form-horizontal" name="repository-form" action="/TutorCandidates/Save" method="post" role="form">
+                <div class="page-header" style="margin-top:0px;">
+                    <label style="text-align:center">编辑基本信息</label>
+                </div>
+                <div class="form-group">
+                    <label for="Name" class="col-sm-2 control-label">姓名</label>
+                    <div class="col-sm-5">
+                        @Html.ValidationMessageFor(m => m.Name, null, new { @class = "text-danger" })
+                        @Html.TextBoxFor(m => m.Name, new { @class = "form-control", @placeholder = "eg.张三" })
                     </div>
                 </div>
-            </div>
+                <div class="form-group">
+                    <label for="Sex" class="col-sm-2 control-label" style="display:block;float:left">性别</label>
+                    <div class="col-sm-5" style="float:left">
+                        @Html.ValidationMessageFor(m => m.Sex, null, new { @class = "text-danger" })
+                        @TutoringHome.Web.MVCExtension.MvcExtension.RadioButtonFor(Html, m => m.Sex, ViewBag.SexList as List<SelectListItem>)
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="Age" class="col-sm-2 control-label" style="display:block;float:left">年龄</label>
+                    <div class="col-sm-5" style="float:left">
+                        @Html.ValidationMessageFor(m => m.Age, null, new { @class = "text-danger" })
+                        @Html.TextBoxFor(m => m.Age, new { @class = "form-control", @style = "width:70px" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="Graduate" class="col-sm-2 control-label">就读/毕业院校</label>
+                    <div class="col-sm-5">
+                        @Html.ValidationMessageFor(m => m.Graduate, null, new { @class = "text-danger" })
+                        @Html.TextBoxFor(m => m.Graduate, new { @class = "form-control", @placeholder = "eg.清华大学" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="Major" class="col-sm-2 control-label">学习专业</label>
+                    <div class="col-sm-5">
+                        @Html.ValidationMessageFor(m => m.Major, null, new { @class = "text-danger" })
+                        @Html.TextBoxFor(m => m.Major, new { @class = "form-control", @placeholder = "eg.计算机专业" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="Subject" class="col-sm-2 control-label">擅长年级与科目</label>
+                    <div class="col-sm-5">
+                        @Html.ValidationMessageFor(m => m.Subject, null, new { @class = "text-danger" })
+                        @Html.TextAreaFor(m => m.Subject, new { @id = "addSubject", @class = "form-control", @placeholder = "请按照'年级-科目'格式(如‘一年级-数学，三年级-语文，高二-政治...)填写,注意用逗号隔开" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="Experience" class="col-sm-2 control-label">教育经验</label>
+                    <div class="col-sm-5">
+                        @Html.ValidationMessageFor(m => m.Experience, null, new { @class = "text-danger" })
+                        @Html.TextAreaFor(m => m.Experience, new { @class = "form-control", @placeholder = "eg. 最近一段时间的经验示例" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="Evaluation" class="col-sm-2 control-label">自我评价</label>
+                    <div class="col-sm-5">
+                        @Html.ValidationMessageFor(m => m.Evaluation, null, new { @class = "text-danger" })
+                        @Html.TextAreaFor(m => m.Evaluation, new { @class = "form-control", @placeholder = "eg.教授成果" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="Domicile" class="col-sm-2 control-label">现居住地</label>
+                    <div class="col-sm-5">
+                        @Html.ValidationMessageFor(m => m.Domicile, null, new { @class = "text-danger" })
+                        @Html.TextBoxFor(m => m.Domicile, new { @class = "form-control", @placeholder = "eg.具体到街道门牌号" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="Mobile" class="col-sm-2 control-label">联系电话</label>
+                    <div class="col-sm-5">
+                        @Html.ValidationMessageFor(m => m.Mobile, null, new { @class = "text-danger" })
+                        @Html.TextBoxFor(m => m.Mobile, new { @class = "form-control", @placeholder = "eg.有效的联系电话" })
+                    </div>
+                </div>
+
+                <div class="col-sm-5">
+                    <span style="display:block;text-align:center">
+                        <button type="button" class="btn btn-primary" id="btnSubmit" style="width:100px;">保存</button>
+                    </span>
+
+                </div>
+            </form>
         </div>
-        <hr />
     </div>
 </body>
 </html>

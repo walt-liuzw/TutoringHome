@@ -13,5 +13,7 @@ namespace TutoringHome.Web.Models
         public int Code { get; set; }
         [DataMember(Name = "message")]
         public string Message { get; set; }
+        [DataMember(Name = "data")]
+        public string Data { get; set; }
     }
 }

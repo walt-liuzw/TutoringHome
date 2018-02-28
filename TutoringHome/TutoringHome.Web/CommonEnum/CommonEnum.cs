@@ -66,11 +66,11 @@ namespace TutoringHome.Web.CommonEnum
         Class8 = 8,
         [SelectDisplayName("九年级")]
         Class9 = 9,
-        [SelectDisplayName("高一年级")]
+        [SelectDisplayName("高一")]
         Class10 = 10,
-        [SelectDisplayName("高二年级")]
+        [SelectDisplayName("高二")]
         Class11 = 11,
-        [SelectDisplayName("高三年级")]
+        [SelectDisplayName("高三")]
         Class12 = 12
     }
 }
