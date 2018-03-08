@@ -1,6 +1,27 @@
 ﻿@using TutoringHome.Web.Models
 @{
-    List<TeacherInfoModel> listData = ViewData["ListData"] as List<TeacherInfoModel>;
+    List<TeacherInfoModel> listData = new List<TeacherInfoModel>();
+    foreach (var item in ViewBag.ListData)
+    {
+        TeacherInfoModel model = new TeacherInfoModel()
+        {
+            ID = item.ID,
+            Name = item.Name,
+            Sex = (TutoringHome.Web.CommonEnum.SexEnum)item.Sex,
+            Age = item.Age,
+            Graduate = item.Graduate,
+            Major = item.Major,
+            Subject = item.Subject,
+            Experience = item.Experience,
+            Evaluation = item.Evaluation,
+            Domicile = item.Domicile,
+            Mobile = item.Mobile,
+            WorkTime = (TutoringHome.Web.CommonEnum.WorkTimeEnum)item.WorkTime,
+            CreateDateTime = item.CreateDateTime,
+            ModifyDateTime = item.ModifyDateTime
+        };
+        listData.Add(model);
+    }
     Pager pager = ViewData["PagerRecord"] as Pager;
     ViewDataDictionary viewData = new ViewDataDictionary();
     viewData["actionName"] = "GetInfoList";
@@ -51,7 +72,18 @@
                                 <th>年级科目</th>
                             </tr>
                         </thead>
-                        <tbody></tbody>
+                        <tbody>
+                            @foreach (var m in listData)
+                            {
+                                <tr>
+                                    <td>@m.Name</td>
+                                    <td>@m.Sex</td>
+                                    <td>@m.Age</td>
+                                    <td>@m.Graduate</td>
+                                    <td>@m.Subject</td>
+                                </tr>
+                            }
+                        </tbody>
                     </table>
                     @Html.Partial("PagerPartial", pager, viewData)
                 </div>

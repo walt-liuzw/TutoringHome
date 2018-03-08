@@ -114,3 +114,10 @@ E:\TutoringHome\TutoringHome\TutoringHome.Web\bin\zh-Hans\System.Web.WebPages.De
 E:\TutoringHome\TutoringHome\TutoringHome.Web\bin\zh-Hans\System.Web.WebPages.Razor.resources.dll
 E:\TutoringHome\TutoringHome\TutoringHome.Web\obj\Debug\TutoringHome.Web.dll
 E:\TutoringHome\TutoringHome\TutoringHome.Web\obj\Debug\TutoringHome.Web.pdb
+E:\TutoringHome\TutoringHome\TutoringHome.Web\bin\EntityFramework.dll
+E:\TutoringHome\TutoringHome\TutoringHome.Web\bin\EntityFramework.SqlServer.dll
+E:\TutoringHome\TutoringHome\TutoringHome.Web\bin\TutoringHome.Data.dll
+E:\TutoringHome\TutoringHome\TutoringHome.Web\bin\TutoringHome.Data.pdb
+E:\TutoringHome\TutoringHome\TutoringHome.Web\bin\TutoringHome.Data.dll.config
+E:\TutoringHome\TutoringHome\TutoringHome.Web\bin\EntityFramework.xml
+E:\TutoringHome\TutoringHome\TutoringHome.Web\bin\EntityFramework.SqlServer.xml

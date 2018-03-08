@@ -45,7 +45,15 @@ namespace TutoringHome.Web.CommonEnum
         [SelectDisplayName("女")]
         Female = 2
     }
-
+    public enum WorkTimeEnum
+    {
+        [SelectDisplayName("不限时间")]
+        ALL = 0,
+        [SelectDisplayName("周末")]
+        Weekend = 1,
+        [SelectDisplayName("工作日")]
+        Workday = 2
+    }
     public enum ClassNameEnum
     {
         [SelectDisplayName("一年级")]

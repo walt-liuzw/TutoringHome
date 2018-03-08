@@ -3,3 +3,8 @@ E:\TutoringHome\TutoringHome\TutoringHome.Data\bin\Debug\TutoringHome.Data.pdb
 E:\TutoringHome\TutoringHome\TutoringHome.Data\obj\Debug\TutoringHome.Data.csproj.CoreCompileInputs.cache
 E:\TutoringHome\TutoringHome\TutoringHome.Data\obj\Debug\TutoringHome.Data.dll
 E:\TutoringHome\TutoringHome\TutoringHome.Data\obj\Debug\TutoringHome.Data.pdb
+E:\TutoringHome\TutoringHome\TutoringHome.Data\bin\Debug\TutoringHome.Data.dll.config
+E:\TutoringHome\TutoringHome\TutoringHome.Data\bin\Debug\EntityFramework.dll
+E:\TutoringHome\TutoringHome\TutoringHome.Data\bin\Debug\EntityFramework.SqlServer.dll
+E:\TutoringHome\TutoringHome\TutoringHome.Data\bin\Debug\EntityFramework.xml
+E:\TutoringHome\TutoringHome\TutoringHome.Data\bin\Debug\EntityFramework.SqlServer.xml

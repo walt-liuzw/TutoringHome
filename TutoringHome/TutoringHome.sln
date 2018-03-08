@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TutoringHome.Service", "Tut
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TutoringHome.Data", "TutoringHome.Data\TutoringHome.Data.csproj", "{30A21AC7-B4DC-468F-8374-47855D594E77}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TutoringHome.WebTests", "TutoringHome.WebTests\TutoringHome.WebTests.csproj", "{694A00AF-ED52-4E14-AE4C-68F40EBB5FE9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{30A21AC7-B4DC-468F-8374-47855D594E77}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{30A21AC7-B4DC-468F-8374-47855D594E77}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{30A21AC7-B4DC-468F-8374-47855D594E77}.Release|Any CPU.Build.0 = Release|Any CPU
+		{694A00AF-ED52-4E14-AE4C-68F40EBB5FE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{694A00AF-ED52-4E14-AE4C-68F40EBB5FE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{694A00AF-ED52-4E14-AE4C-68F40EBB5FE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{694A00AF-ED52-4E14-AE4C-68F40EBB5FE9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

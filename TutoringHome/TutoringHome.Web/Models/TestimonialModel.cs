@@ -9,7 +9,7 @@ namespace TutoringHome.Web.Models
     {
         //教师ID
         public string UserID { get; set; }
-        public List<string> Content { get; set; }
+        public string Comment { get; set; }
 
         //
     }

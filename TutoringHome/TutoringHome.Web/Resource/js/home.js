@@ -21,7 +21,8 @@ require(["http://tutoringhome.163vps.cn/Resource/js/app/action.js?ts=" + new Dat
         el: $('body'),
         events: {
             'click #btnSubmit': action.btnSubmit,
-            'click #addSubject': action.addSubject
+            'click #btnEdit': action.btnEdit,
+            'click #btnEditSubmit': action.btnEditSubmit
         }
 
     });

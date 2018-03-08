@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using TutoringHome.Data;
+using TutoringHome.Data.Model;
 using TutoringHome.Web.CommonEnum;
 using TutoringHome.Web.Models;
 
@@ -15,8 +17,8 @@ namespace TutoringHome.Web.Controllers
         {
             className = (string.IsNullOrEmpty(className)) ? string.Empty : className;
             subjectName = (string.IsNullOrEmpty(subjectName)) ? string.Empty : subjectName;
-            List<TeacherInfoModel> rst = new List<TeacherInfoModel>();
             var pager = new Pager();
+            List<TeacherInfo> rst = new List<TeacherInfo>();
             SearchParams sp = new SearchParams();
             sp.ClassName = className;
             sp.SubjectName = subjectName;
@@ -25,8 +27,15 @@ namespace TutoringHome.Web.Controllers
             ViewBag.SubjectNameList = EnumHelper.GetSelectList<SubjectEnum>();
             ViewBag.ClassNameList = EnumHelper.GetSelectList<ClassNameEnum>();
 
-            ViewData["PagerRecord"] = pager;
-            ViewData["ListData"] = rst;
+            pager.Count = TeacherRepository.Instance.GetCount(className, subjectName);
+            rst = TeacherRepository.Instance.GetList(className, subjectName, pageIndex);
+            
+            pager.PageIndex = pageIndex;
+
+            ViewBag.ClassName = className;
+            ViewBag.SubjectName = subjectName;
+            ViewBag.PagerRecord = pager;
+            ViewBag.ListData = rst;
             return View();
         }
     }

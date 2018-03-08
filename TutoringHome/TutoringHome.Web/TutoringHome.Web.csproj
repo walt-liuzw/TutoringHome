@@ -49,6 +49,12 @@
     <Reference Include="Beisen.Configuration.XmlSerializers, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Beisen.Configuration.1.1.0.4\lib\net35\Beisen.Configuration.XmlSerializers.dll</HintPath>
     </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
@@ -177,6 +183,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Site.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="ApplicationInsights.config">
@@ -269,8 +276,13 @@
     <Content Include="Resource\fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="Views\Parent\GetInfoList.cshtml" />
     <Content Include="Views\Shared\PagerPartial.cshtml" />
+    <Content Include="Views\TutorCandidates\Detail.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\TutoringHome.Data\TutoringHome.Data.csproj">
+      <Project>{30a21ac7-b4dc-468f-8374-47855d594e77}</Project>
+      <Name>TutoringHome.Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\TutoringHome.Service\TutoringHome.Service.csproj">
       <Project>{751dd920-d46f-462e-9f0d-5943f38fd2db}</Project>
       <Name>TutoringHome.Service</Name>

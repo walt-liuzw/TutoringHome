@@ -12,6 +12,8 @@ namespace TutoringHome.Web.Models
     public class TeacherInfoModel
     {
         [DataMember]
+        public int ID { get; set; }
+        [DataMember]
         [Required(ErrorMessage = "请输入姓名")]
         public string Name { get; set; }
         [DataMember]
@@ -33,7 +35,6 @@ namespace TutoringHome.Web.Models
         [Required(ErrorMessage = "请输入教育经验")]
         public string Experience { get; set; }
         [DataMember]
-        [Required(ErrorMessage = "请输入自我评价")]
         public string Evaluation { get; set; }
         [DataMember]
         [Required(ErrorMessage = "请输入现在居住地")]
@@ -41,5 +42,9 @@ namespace TutoringHome.Web.Models
         [DataMember]
         [Required(ErrorMessage = "请输入联系电话")]
         public string Mobile { get; set; }
+        [DataMember]
+        public WorkTimeEnum WorkTime { get; set; }
+        public DateTime CreateDateTime { get; set; }
+        public DateTime ModifyDateTime { get; set; }
     }
 }
