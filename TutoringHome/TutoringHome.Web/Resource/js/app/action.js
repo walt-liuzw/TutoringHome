@@ -60,6 +60,17 @@ define(["jquery", "app/render", "app/model", "app/common", "jquery-ui", "validat
                     $('.form-horizontal').attr("action", "http://tutoringhome.163vps.cn/TutorCandidates/Update?id=" + teacherinfoid).submit();
                 }
             },
+            btnSearch: function ()
+            {
+                //组装查询条件
+                var classValue = $('#DropDownClassName').val();
+                var checkedList = new Array();
+                $("input[name='SubjectName']:checked").each(function () {
+                    checkedList.push($(this).val());
+                });   
+                var subjectValue = checkedList.join(",")
+                window.location.href = "http://tutoringhome.163vps.cn/Parent/GetInfoList?className=" + classValue + "&subjectName=" + subjectValue;
+            },
             checkData: function ()
             {
                 if ($("#txt_name").val() == "")

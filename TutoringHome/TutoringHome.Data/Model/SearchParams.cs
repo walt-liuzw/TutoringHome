@@ -1,14 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace TutoringHome.Web.Models
+namespace TutoringHome.Data.Model
 {
     public class SearchParams
     {
         public string ClassName { get; set; }
-        public string SubjectName { get; set; }
+        public List<string> SubjectName { get; set; }
         /// <summary>
         /// 页码
         /// </summary>

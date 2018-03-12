@@ -87,6 +87,19 @@ namespace TutoringHome.Web.CommonEnum
             return selectList;
 
         }
-
+        public static string GetTextByValue<T>(string value)
+        {
+            var enumType = typeof(T);
+            string result = string.Empty;
+            foreach (var obj in Enum.GetValues(enumType))
+            {
+                if (Convert.ToString(obj) == value)
+                {
+                    result = GetEnumDescription(obj);
+                    break;
+                }
+            }
+            return result;
+        }
     }
 }

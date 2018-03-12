@@ -74,15 +74,29 @@ namespace TutoringHome.Data
                 throw ex;
             }
         }
-        public List<TeacherInfo> GetList(string className, string subjectName, int pageIndex = 0)
+        public List<TeacherInfo> GetList(SearchParams sp)
         {
             List<TeacherInfo> list = new List<TeacherInfo>();
             try
             {
-                string sqlStr = "SELECT * FROM  [TutoringHome].[dbo].[TeacherInfoes]";
-                if (!string.IsNullOrEmpty(subjectName))
+                string sqlStr = "SELECT *  FROM  [TutoringHome].[dbo].[TeacherInfoes]";
+                string className = "一年级";
+                if (!string.IsNullOrEmpty(sp.ClassName))
                 {
-                    sqlStr = sqlStr + string.Format("WHERE [Subject] like '%一年级 -{0}%'", subjectName);
+                    className = sp.ClassName;
+                }
+                List<string> addParamsList = new List<string>();
+                foreach (var item in sp.SubjectName)
+                {
+                    addParamsList.Add(string.Format(" [Subject] like '%{0}-{1}%' ", className, item));
+                }
+                if (addParamsList.Count > 0)
+                {
+                    sqlStr = sqlStr + " where" + string.Join(" or ", addParamsList);
+                }
+                else
+                {
+                    sqlStr = sqlStr + " WHERE [Subject] like '%一年级%'";
                 }
                 using (var ctx = new TeacherInfoContext("DataConnection"))
                 {
@@ -117,16 +131,30 @@ namespace TutoringHome.Data
             }
         }
 
-        public int GetCount(string className, string subjectName)
+        public int GetCount(SearchParams sp)
         {
             try
             {
                 string sqlStr = "SELECT COUNT(*) FROM  [TutoringHome].[dbo].[TeacherInfoes]";
-                if (!string.IsNullOrEmpty(subjectName))
+                string className = "一年级";
+                if (!string.IsNullOrEmpty(sp.ClassName))
                 {
-                    sqlStr = sqlStr+ string.Format("WHERE [Subject] like '%一年级 -{0}%'", subjectName);
+                    className = sp.ClassName;
                 }
+                List<string> addParamsList = new List<string>();
                 
+                foreach (var item in sp.SubjectName)
+                {
+                    addParamsList.Add(string.Format(" [Subject] like '%{0}-{1}%' ", className, item));
+                }
+                if (addParamsList.Count > 0)
+                {
+                    sqlStr = sqlStr + " where" + string.Join(" or ", addParamsList);
+                }
+                else
+                {
+                    sqlStr = sqlStr + " WHERE [Subject] like '%一年级%'";
+                }
                 using (var ctx = new TeacherInfoContext("DataConnection"))
                 {
                     var result = ctx.Database.SqlQuery<int>(sqlStr);

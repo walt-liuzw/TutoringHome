@@ -22,7 +22,8 @@ require(["http://tutoringhome.163vps.cn/Resource/js/app/action.js?ts=" + new Dat
         events: {
             'click #btnSubmit': action.btnSubmit,
             'click #btnEdit': action.btnEdit,
-            'click #btnEditSubmit': action.btnEditSubmit
+            'click #btnEditSubmit': action.btnEditSubmit,
+            'click #btnSearch': action.btnSearch
         }
 
     });

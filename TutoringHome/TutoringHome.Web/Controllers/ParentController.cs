@@ -20,23 +20,33 @@ namespace TutoringHome.Web.Controllers
             var pager = new Pager();
             List<TeacherInfo> rst = new List<TeacherInfo>();
             SearchParams sp = new SearchParams();
-            sp.ClassName = className;
-            sp.SubjectName = subjectName;
+            sp.ClassName = EnumHelper.GetTextByValue<ClassNameEnum>(className);
+            sp.SubjectName = BuildSubjectName(subjectName.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries).ToList());
             sp.PageIndex = pageIndex + 1;
             sp.PageSize = pager.PageSize;
             ViewBag.SubjectNameList = EnumHelper.GetSelectList<SubjectEnum>();
             ViewBag.ClassNameList = EnumHelper.GetSelectList<ClassNameEnum>();
 
-            pager.Count = TeacherRepository.Instance.GetCount(className, subjectName);
-            rst = TeacherRepository.Instance.GetList(className, subjectName, pageIndex);
+            pager.Count = TeacherRepository.Instance.GetCount(sp);
+            rst = TeacherRepository.Instance.GetList(sp);
             
             pager.PageIndex = pageIndex;
 
-            ViewBag.ClassName = className;
-            ViewBag.SubjectName = subjectName;
+            ViewBag.DDSelectValue = string.IsNullOrEmpty(className) ? "Class1" : className;
+            ViewBag.SelectValue = subjectName;
             ViewBag.PagerRecord = pager;
             ViewBag.ListData = rst;
             return View();
+        }
+
+        private List<string> BuildSubjectName(List<string> list)
+        {
+            List<string> result = new List<string>();
+            foreach (var item in list)
+            {
+                result.Add(EnumHelper.GetTextByValue<SubjectEnum>(item));
+            }
+            return result;
         }
     }
 }

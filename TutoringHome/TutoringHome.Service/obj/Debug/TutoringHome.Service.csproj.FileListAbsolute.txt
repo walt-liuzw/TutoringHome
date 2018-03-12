@@ -13,3 +13,4 @@ E:\TutoringHome\TutoringHome\TutoringHome.Service\bin\Debug\Senparc.Weixin.WxOpe
 E:\TutoringHome\TutoringHome\TutoringHome.Service\obj\Debug\TutoringHome.Service.csproj.CoreCompileInputs.cache
 E:\TutoringHome\TutoringHome\TutoringHome.Service\obj\Debug\TutoringHome.Service.dll
 E:\TutoringHome\TutoringHome\TutoringHome.Service\obj\Debug\TutoringHome.Service.pdb
+E:\TutoringHome\TutoringHome\TutoringHome.Service\obj\Debug\TutoringHome.Service.csprojResolveAssemblyReference.cache

@@ -40,6 +40,7 @@
     <link href="@Url.Content("~/Resource/css/bootstrap-theme.min.css")" rel="stylesheet">
     <link href="@Url.Content("~/Resource/css/theme.css")" rel="stylesheet">
     <link href="@Url.Content("~/Resource/css/jquery-ui/all.css")" rel="stylesheet">
+    
 </head>
 <body role="document">
     <div class="container-fluid theme-showcase" role="main">
@@ -49,15 +50,32 @@
                     <div class="form-group">
                         <label for="ClassName" class="col-sm-2 control-label" style="display:block;float:left">选择年级</label>
                         <div class="col-sm-5" style="float:left">
-                            @Html.DropDownList("ClassName", ViewBag.ClassNameList as List<SelectListItem>)
+                            @Html.DropDownList("ClassName", ViewBag.ClassNameList as List<SelectListItem>, new { @id = "DropDownClassName" })
                         </div>
                     </div>
                     <div class="form-group">
+                        <input hidden="hidden" id="hiddenDropDownSelectValue" value="@ViewBag.DDSelectValue" />
+                        <input hidden="hidden" id="hiddenSelectValue" value="@ViewBag.SelectValue" />
                         <label for="SubjectName" class="col-sm-2 control-label">选择科目</label>
                         <div class="col-sm-5">
-                            @TutoringHome.Web.MVCExtension.MvcExtension.CheckBoxFor(Html, "SubjectName", ViewBag.SubjectNameList as List<SelectListItem>)
+                            <input type="checkbox" value="Chinese" name="SubjectName" id="Chinese"><label for="SubjectName1">语文</label>
+                            <input type="checkbox" value="Maths" name="SubjectName" id="Maths"><label for="SubjectName2">数学</label>
+                            <input type="checkbox" value="English" name="SubjectName" id="English"><label for="SubjectName3">外语</label>
+                            <input type="checkbox" value="Physics" name="SubjectName" id="Physics"><label for="SubjectName4">物理</label>
+                            <input type="checkbox" value="Chemistry" name="SubjectName" id="Chemistry"><label for="SubjectName5">化学</label>
+                            <input type="checkbox" value="Politics" name="SubjectName" id="Politics"><label for="SubjectName6">政治</label>
+                            <input type="checkbox" value="History" name="SubjectName" id="History"><label for="SubjectName7">历史</label>
+                            <input type="checkbox" value="Geography" name="SubjectName" id="Geography"><label for="SubjectName8">地理</label>
+                            <input type="checkbox" value="Biology" name="SubjectName" id="Biology"><label for="SubjectName9">生物</label>
+                            <input type="checkbox" value="Music" name="SubjectName" id="Music"><label for="SubjectName10">音乐</label>
+                            <input type="checkbox" value="Form" name="SubjectName" id="Form"><label for="SubjectName11">形体</label>
+                            <input type="checkbox" value="Calligraphy" name="SubjectName" id="Calligraphy"><label for="SubjectName12">书法</label>
+                            <input type="checkbox" value="Arts" name="SubjectName" id="Arts"><label for="SubjectName13">美术</label>
+                            <input type="checkbox" value="Science" name="SubjectName" id="Science"><label for="SubjectName14">科学</label>
+                            <input type="checkbox" value="PE" name="SubjectName" id="PE"><label for="SubjectName15">体育</label>
                         </div>
                     </div>
+                    <button type="button" class="btn btn-primary" id="btnSearch" style="width:100px;">查 询</button>
                 </div>
             </form>
             <div class="row-fluid">
@@ -90,5 +108,17 @@
             </div>
         </div>
     </div>
+    <script src="~/Resource/js/lib/jquery.js"></script>
+    <script type="text/javascript">
+        var selectValuesForDD = $('#hiddenDropDownSelectValue').val();
+        $('#DropDownClassName').val(selectValuesForDD);
+        var selectValues = $('#hiddenSelectValue').val();
+        var valueArray = selectValues.split(',');
+        for (var i = 0; i < valueArray.length; i++) {
+            var item = valueArray[i];
+            var el = $('#' + item);
+            el.attr('checked', true);
+        }
+    </script>
 </body>
 </html>

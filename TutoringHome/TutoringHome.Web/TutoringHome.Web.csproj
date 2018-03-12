@@ -176,7 +176,6 @@
     </Compile>
     <Compile Include="Models\Pager.cs" />
     <Compile Include="Models\Result.cs" />
-    <Compile Include="Models\SearchParams.cs" />
     <Compile Include="Models\TeacherInfoModel.cs" />
     <Compile Include="Models\TestimonialModel.cs" />
     <Compile Include="MVCExtension\MvcExtension.cs" />

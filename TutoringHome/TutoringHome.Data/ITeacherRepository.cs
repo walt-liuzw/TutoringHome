@@ -12,7 +12,7 @@ namespace TutoringHome.Data
         int Insert(TeacherInfo teacherInfo);
         TeacherInfo Get(string teacherInfoId);
         int Update(TeacherInfo teacherInfo,int id);
-        List<TeacherInfo> GetList(string className, string subjectName, int pageIndex = 0);
-        int GetCount(string className, string subjectName);
+        List<TeacherInfo> GetList(SearchParams sp);
+        int GetCount(SearchParams sp);
     }
 }
