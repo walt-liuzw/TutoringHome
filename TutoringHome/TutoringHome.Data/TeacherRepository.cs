@@ -79,7 +79,7 @@ namespace TutoringHome.Data
             List<TeacherInfo> list = new List<TeacherInfo>();
             try
             {
-                string sqlStr = "SELECT *  FROM  [TutoringHome].[dbo].[TeacherInfoes]";
+                string sqlStr = string.Empty;
                 string className = "一年级";
                 if (!string.IsNullOrEmpty(sp.ClassName))
                 {
@@ -92,11 +92,11 @@ namespace TutoringHome.Data
                 }
                 if (addParamsList.Count > 0)
                 {
-                    sqlStr = sqlStr + " where" + string.Join(" or ", addParamsList);
+                    sqlStr = "SELECT *  FROM  [TutoringHome].[dbo].[TeacherInfoes] WHERE " + string.Join(" OR ", addParamsList);
                 }
                 else
                 {
-                    sqlStr = sqlStr + " WHERE [Subject] like '%一年级%'";
+                    sqlStr = string.Format("SELECT *  FROM  [TutoringHome].[dbo].[TeacherInfoes] WHERE [Subject] like '%{0}%'", className);
                 }
                 using (var ctx = new TeacherInfoContext("DataConnection"))
                 {
@@ -135,7 +135,7 @@ namespace TutoringHome.Data
         {
             try
             {
-                string sqlStr = "SELECT COUNT(*) FROM  [TutoringHome].[dbo].[TeacherInfoes]";
+                string sqlStr = string.Empty;
                 string className = "一年级";
                 if (!string.IsNullOrEmpty(sp.ClassName))
                 {
@@ -149,11 +149,11 @@ namespace TutoringHome.Data
                 }
                 if (addParamsList.Count > 0)
                 {
-                    sqlStr = sqlStr + " where" + string.Join(" or ", addParamsList);
+                    sqlStr = "SELECT COUNT(*) FROM  [TutoringHome].[dbo].[TeacherInfoes] WHERE " + string.Join(" OR ", addParamsList);
                 }
                 else
                 {
-                    sqlStr = sqlStr + " WHERE [Subject] like '%一年级%'";
+                    sqlStr = string.Format("SELECT COUNT(*) FROM  [TutoringHome].[dbo].[TeacherInfoes] WHERE [Subject] like '%{0}%'", className);
                 }
                 using (var ctx = new TeacherInfoContext("DataConnection"))
                 {
