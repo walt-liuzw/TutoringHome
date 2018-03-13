@@ -276,6 +276,9 @@
     <Content Include="Views\Parent\GetInfoList.cshtml" />
     <Content Include="Views\Shared\PagerPartial.cshtml" />
     <Content Include="Views\TutorCandidates\Detail.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Parent\Detail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TutoringHome.Data\TutoringHome.Data.csproj">

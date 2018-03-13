@@ -88,18 +88,20 @@
                                 <th>年龄</th>
                                 <th>学校</th>
                                 <th>年级科目</th>
+                                <th>查看信息</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach (var m in listData)
                             {
-                                <tr>
-                                    <td>@m.Name</td>
-                                    <td>@m.Sex</td>
-                                    <td>@m.Age</td>
-                                    <td>@m.Graduate</td>
-                                    <td>@m.Subject</td>
-                                </tr>
+                            <tr>
+                                <td>@m.Name</td>
+                                <td>@m.Sex</td>
+                                <td>@m.Age</td>
+                                <td>@m.Graduate</td>
+                                <td>@m.Subject</td>
+                                <td>@Html.ActionLink("详情", "Detail","Parent",new { id = m.ID, backurl = Request.Url.OriginalString }, new { @class = "btn btn-default btn-sm", @name = "detailLink" })</td>
+                            </tr>
                             }
                         </tbody>
                     </table>

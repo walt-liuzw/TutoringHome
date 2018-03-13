@@ -1,4 +1,6 @@
-﻿@model TutoringHome.Web.Models.TeacherInfoModel
+﻿@using TutoringHome.Web.Models;
+@model TutoringHome.Web.Models.TeacherInfoModel
+<!DOCTYPE html>
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -7,7 +9,6 @@
     <title>详细信息</title>
     <script data-main="@Url.Content("~/Resource/js/home.js?ts="+ ViewBag.TimeStamp)" src="@Url.Content("~/Resource/js/lib/require.js")"></script>
     <link href="@Url.Content("~/Resource/css/bootstrap.min.css")" rel="stylesheet">
-    <link href="@Url.Content("~/Resource/css/bootstrap.min.css")" rel="stylesheet">
     <link href="@Url.Content("~/Resource/css/bootstrap-theme.min.css")" rel="stylesheet">
     <link href="@Url.Content("~/Resource/css/theme.css")" rel="stylesheet">
     <link href="@Url.Content("~/Resource/css/jquery-ui/all.css")" rel="stylesheet">
@@ -15,16 +16,11 @@
 <body role="document">
     <div class="container-fluid theme-showcase" role="main">
         <div class="panel-body">
-            <input hidden="hidden" value="@ViewBag.TeacherInfoId" id="teacherinfoid" />
-            <form class="form-horizontal" name="repository-form" action="/TutorCandidates/Update" method="post" role="form">
-                <div class="page-header" style="margin-top:0px;">
-                    <label style="text-align:center">编辑基本信息</label>
-                    <button type="button" class="btn btn-primary" id="btnEdit">编 辑</button>
-                </div>
+            <form class="form-horizontal" name="repository-form" action="" method="post" role="form">
                 <div class="form-group">
                     <label for="Name" class="col-sm-2 control-label">姓名<span style="color:red">*</span></label>
                     <div class="col-sm-5">
-                        @Html.TextBoxFor(m => m.Name, new { @class = "form-control", @value = Model.Name, @readonly = "readonly", @id = "txt_name" })
+                        @Html.TextBoxFor(m => Model.Name, new { @class = "form-control", @value = Model.Name, @readonly = "readonly", @id = "txt_name" })
                     </div>
                 </div>
                 <div class="form-group">
@@ -45,25 +41,25 @@
                 <div class="form-group">
                     <label for="Age" class="col-sm-2 control-label" style="display:block;float:left">年龄<span style="color:red">*</span></label>
                     <div class="col-sm-5" style="float:left">
-                        @Html.TextBoxFor(m => m.Age, new { @class = "form-control", @style = "width:70px", @id = "txt_age", @value = Model.Age, @readonly = "readonly" })
+                        @Html.TextBoxFor(m => Model.Age, new { @class = "form-control", @style = "width:70px", @id = "txt_age", @value = Model.Age, @readonly = "readonly" })
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="Graduate" class="col-sm-2 control-label">就读/毕业院校<span style="color:red">*</span></label>
                     <div class="col-sm-5">
-                        @Html.TextBoxFor(m => m.Graduate, new { @class = "form-control", @value = Model.Graduate, @readonly = "readonly", @id = "txt_graduate" })
+                        @Html.TextBoxFor(m => Model.Graduate, new { @class = "form-control", @value = Model.Graduate, @readonly = "readonly", @id = "txt_graduate" })
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="Major" class="col-sm-2 control-label">学习专业<span style="color:red">*</span></label>
                     <div class="col-sm-5">
-                        @Html.TextBoxFor(m => m.Major, new { @class = "form-control", @value = Model.Major, @readonly = "readonly", @id = "txt_major" })
+                        @Html.TextBoxFor(m => Model.Major, new { @class = "form-control", @value = Model.Major, @readonly = "readonly", @id = "txt_major" })
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="Subject" class="col-sm-2 control-label">擅长年级与科目<span style="color:red">*</span></label>
                     <div class="col-sm-5">
-                        @Html.TextAreaFor(m => m.Subject, new { @class = "form-control", @value = Model.Subject, @readonly = "readonly", @id = "txt_subject" })
+                        @Html.TextAreaFor(m => Model.Subject, new { @class = "form-control", @value = Model.Subject, @readonly = "readonly", @id = "txt_subject" })
                     </div>
                 </div>
                 <div class="form-group">
@@ -93,32 +89,26 @@
                 <div class="form-group">
                     <label for="Experience" class="col-sm-2 control-label">教育经验<span style="color:red">*</span></label>
                     <div class="col-sm-5">
-                        @Html.TextAreaFor(m => m.Experience, new { @class = "form-control", @value = Model.Experience, @readonly = "readonly", @id = "txt_experience" })
+                        @Html.TextAreaFor(m => Model.Experience, new { @class = "form-control", @value = Model.Experience, @readonly = "readonly", @id = "txt_experience" })
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="Evaluation" class="col-sm-2 control-label">自我评价</label>
                     <div class="col-sm-5">
-                        @Html.TextAreaFor(m => m.Evaluation, new { @class = "form-control", @value = Model.Evaluation, @readonly = "readonly", @id = "txt_evaluation" })
+                        @Html.TextAreaFor(m => Model.Evaluation, new { @class = "form-control", @value = Model.Evaluation, @readonly = "readonly", @id = "txt_evaluation" })
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="Domicile" class="col-sm-2 control-label">现居住地<span style="color:red">*</span></label>
                     <div class="col-sm-5">
-                        @Html.TextBoxFor(m => m.Domicile, new { @class = "form-control", @value = Model.Domicile, @readonly = "readonly", @id = "txt_domicile" })
+                        @Html.TextBoxFor(m => Model.Domicile, new { @class = "form-control", @value = Model.Domicile, @readonly = "readonly", @id = "txt_domicile" })
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="Mobile" class="col-sm-2 control-label">联系电话<span style="color:red">*</span></label>
                     <div class="col-sm-5">
-                        @Html.TextBoxFor(m => m.Mobile, new { @class = "form-control", @value = Model.Mobile, @readonly = "readonly", @id = "txt_mobile" })
+                        @Html.TextBoxFor(m => Model.Mobile, new { @class = "form-control", @value = Model.Mobile, @readonly = "readonly", @id = "txt_mobile" })
                     </div>
-                </div>
-                <div class="col-sm-5">
-                    <span style="display:block;text-align:center">
-                        <button type="button" class="btn btn-primary" id="btnEditSubmit" style="width:100px;display:none;">提 交</button>
-                    </span>
-
                 </div>
             </form>
         </div>

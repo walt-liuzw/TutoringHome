@@ -38,7 +38,28 @@ namespace TutoringHome.Web.Controllers
             ViewBag.ListData = rst;
             return View();
         }
-
+        public ActionResult Detail(string id)
+        {
+            var item = TeacherRepository.Instance.Get(id);
+            TeacherInfoModel result = new TeacherInfoModel
+            {
+                ID = item.ID,
+                Name = item.Name,
+                Sex = (SexEnum)item.Sex,
+                Age = item.Age,
+                Graduate = item.Graduate,
+                Major = item.Major,
+                Subject = item.Subject,
+                Experience = item.Experience,
+                Evaluation = item.Evaluation,
+                Domicile = item.Domicile,
+                Mobile = item.Mobile,
+                WorkTime = (WorkTimeEnum)item.WorkTime,
+                CreateDateTime = item.CreateDateTime,
+                ModifyDateTime = item.ModifyDateTime
+            };
+            return View(result);
+        }
         private List<string> BuildSubjectName(List<string> list)
         {
             List<string> result = new List<string>();
