@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="Context\TeacherInfoContext.cs" />
     <Compile Include="ITeacherRepository.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\SearchParams.cs" />
     <Compile Include="Model\TeacherInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
